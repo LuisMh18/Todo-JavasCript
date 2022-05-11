@@ -1,0 +1,1 @@
+let cadenaSinUltimoCaracter = cadenaOriginal.substring(0, cadenaOriginal.length - 1);

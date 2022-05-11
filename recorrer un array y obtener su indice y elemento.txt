@@ -1,0 +1,25 @@
+let frutas = ["Manzana", "Banana"];
+
+frutas.forEach(function(elemento, indice, array) {
+    console.log(elemento, indice);
+});
+// Manzana 0
+// Banana 1
+
+
+//otro ejemplo usando funciones flecha - el ejemplo esta en la vista config_quiz.ejs del proyecto htron2_frontend
+data.usuariosQuiz.forEach((value, indice, array) => {
+      console.log("indice: ", indice);
+      //console.log("array: ", array);
+      console.log(value.user);
+      $('#check_'+value.user).prop("checked", true);
+      $('#check_'+value.user).attr("data-position", indice);
+                                          
+       objectUsers.push({
+           idUser:value.user
+       });
+                                            
+});
+
+//y el ejemplo de cuando se elimina y le vuelve a poner la posición correctamente también esta en ese vista
+$(document).on("click", ".seelct_checkbox3", function(){

@@ -1,0 +1,2 @@
+var cadena = 'Hola "bienvenido a victorroblesweb.es" de Víctor Robles';
+console.log(cadena.replace(/['"]+/g, ''));

@@ -1,0 +1,78 @@
+Array.filter es un método inmutable que retorna un nuevo arreglo con los 
+elementos que cumplan la condición implementada por la función utilizada 
+como argumento.
+
+let data = [1,2,6,1,2,5,9,'33','33'];
+
+    let result = data.filter((item,index)=>{
+      return data.indexOf(item) === index;
+    })
+    console.log(result); //[1,2,6,5,9,'33']
+
+//eliminamos los duplicados ----
+let UserssinRepetidos = objectUsers.filter((valorActual, indiceActual, arreglo) => {
+       //Podríamos omitir el return y hacerlo en una línea, pero se vería menos legible
+       return arreglo.findIndex(valorDelArreglo => JSON.stringify(valorDelArreglo) === JSON.stringify(valorActual)) === indiceActual
+});
+console.log("Sin repetidos es:", UserssinRepetidos);
+
+//-----------------------------------------------------------------
+
+El objeto global Set es una estructura de datos, una colección de valores que permite sólo almacenar valores 
+únicos de cualquier tipo, incluso valores primitivos u referencias a objetos.
+
+Es posible iterar sobre los elementos en el orden de inserción.
+
+let data = [1,2,6,1,2,5,9,'33','33'];
+
+const dataArr = new Set(data);
+
+let result = [...dataArr];
+
+console.log(result); //[1,2,6,5,9,'33']
+
+//-------------------------------------------------------------------
+
+El método Array.reduce también puede ser utilizado con el mismo propósito.
+
+Array.reduce ejecuta una función sobre cada elemento del arreglo y retorna un valor como un único resultado. 
+Básicamente permite transformar un arreglo a otro tipo de valor.
+
+Array.reduce recibe dos parámetros, una función , llamada reductora, que tiene a lo menos dos argumentos: 
+el acumulador y el item actual de la iteración y como segundo parámetro que indica el valor inicial en este 
+caso un arreglo vacío
+
+let data = [1,2,6,1,2,5,9,'33','33'];
+
+    const result = data.reduce((acc,item)=>{
+      if(!acc.includes(item)){
+      	acc.push(item);
+      }
+      return acc;
+    },[])
+
+    console.log(result); //[1,2,6,5,9,'33']
+
+
+//---------------------------------------------------------------------------
+
+ForEach y otros loops
+Array.forEach es otra forma de iterar sobre el arreglo y como tal también permite remover duplicados 
+pero de una forma más imperativa.
+
+Aquí es necesario utilizar un arreglo auxiliar para almacenar el resultado del proceso de filtrado
+
+Al iterar sobre el arreglo se utiliza un bloque condicional que verifica que el item no exista ya 
+dentro del arreglo de valores únicos utilizando Array.includes, que permite determinar si un elemento 
+existe o no dentro del arreglo.
+
+let data = [1,2,6,1,2,5,9,'33','33'];
+
+    const result = [];
+    data.forEach((item)=>{
+    	//pushes only unique element
+        if(!uniqueArr.includes(item)){
+    		uniqueArr.push(item);
+    	}
+    })
+    console.log(result); //[1,2,6,5,9,'33']

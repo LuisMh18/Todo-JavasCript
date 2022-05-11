@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Funciones flecha</title>
+</head>
+<body>
+
+
+	<script>
+		
+
+		console.log("funcion normal");
+
+		function normalSaludo(nombre){
+			console.log(`Esta es una funcion normal de ${nombre}`);
+		}
+
+        normalSaludo("Luis");
+
+        console.log("funcion en variable");
+		
+		var normalSaludo2 = function (nombre){
+			console.log(`Esta es una funcion en variable de ${nombre}`);
+		}
+
+        normalSaludo2("Luis");
+
+        console.log("funcion flecha, basicamente se reemplaza la palabra reservada function por =>");
+		
+		var normalSaludo3 = (nombre, edad) => {
+			console.log(`Esta es una funcion flecha de ${nombre} edad ${edad}`);
+		}
+
+        normalSaludo3("Luis", 27);
+
+        console.log("funcion flecha, si solo lleva un parametro no hace falta poner ()");
+		
+		var normalSaludo4 = nombre => {
+			console.log(`Esta es una funcion flecha de ${nombre}`);
+		}
+
+        normalSaludo4("Luis");
+
+        console.log("funcion flecha, si solo vas a codificar una linea no hace falta poner {}");
+		
+		var normalSaludo5 = nombre => console.log(`Esta es una funcion flecha de ${nombre}`);
+
+        normalSaludo5("Luis");
+
+	</script>
+	
+</body>
+</html>

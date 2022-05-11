@@ -1,0 +1,50 @@
+// Original array 
+var arr = [{ 'n': 10 }, { 'n': 5 }, { 'n': 3 }, { 'n': 12 }];
+     
+// Use of _.sumBy()  
+// method 
+let gfg = _.sumBy(arr, 'n'); 
+         
+// Printing the output  
+console.log(gfg);
+
+//si es un array multidimensional -----------------------------
+data: [
+    {
+      nombre_cliente: 'Krilin No se XD ',
+      razon_social: '',
+      numero_cliente: '2016012402303138',
+      agente_id: 92,
+      agente: 'Adri',
+      id: 136,
+      num_pedido: '20160531153035',
+      total: 1044,
+      created_at: '2016-05-31',
+      extra_pedido: 'No',
+      estatus: 3,
+      estatusDes: 'Cancelado'
+    },
+    {
+      nombre_cliente: 'Vegeta No se XD No se XD',
+      razon_social: '',
+      numero_cliente: '20160122225054136',
+      agente_id: 92,
+      agente: 'Adri',
+      id: 130,
+      num_pedido: '20160526113937',
+      total: 1521.92,
+      created_at: '2016-05-26',
+      extra_pedido: 'Si',
+      estatus: 1,
+      estatusDes: 'Crédito'
+    }
+  ]
+
+
+console.log(result); //es la variable que tiene el array
+
+//debemos acceder a la propiedad data del array
+const totalSumaPedidos = _.sumBy(result.data, 'total');
+
+//el ejemplo esta en el proyecto de apiRestGardenNode - en el controlador de agentes en la función findAll
+

@@ -1,0 +1,7 @@
+let saludo = '¡Hola!';
+
+//convierte a minusculas
+console.log(saludo.toLowerCase());
+
+//convierte a mayusculas
+console.log(saludo.toUpperCase());

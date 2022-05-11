@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Metodos de arrays</title>
+</head>
+<body>
+
+
+	<script>
+
+        console.log("----Funciones flecha----");
+        var funcionSinParametros = () => {
+            console.log("esta es una función sin parametros");
+        };
+
+        funcionSinParametros();
+
+        var funcionConParametros = (nombre, edad) => {
+            console.log(`esta es una función con parametros de ${nombre} y tengo ${edad} años de edad`);
+        };
+
+        funcionConParametros("Luis", 28);
+
+
+		console.log("----TRANSFORMADORES----");
+
+		var nombres = ["Luis", "Pedro", "Diana", "Anita"];
+		
+
+		console.log(nombres);
+
+
+        console.log("pop() elimina el ultimo elemento de un array y lo devuelve");
+
+        var metodo_pop = nombres.pop();
+
+        console.log(metodo_pop);
+
+        console.log("--------");
+
+        console.log(nombres);
+
+
+        console.log("shift() elimina el primer elemento de un array y lo devuelve");
+
+        var metodo_shift = nombres.shift();
+
+        console.log(metodo_shift);
+
+        console.log("--------");
+
+        console.log(nombres);
+
+        console.log("push() agrega elementos a un array y devuelve el total de elementos");
+
+        var metodo_push = nombres.push("Saul", "Victor", "Monica");
+
+        console.log(metodo_push);
+
+        console.log("--------");
+
+        console.log(nombres);
+
+
+        console.log("reverse() invierte el orden del array y lo devuelve");
+
+        var numeros = [1, 2, 3, 4, 5, 6];
+
+        console.log(numeros.reverse());
+
+
+        console.log("unshift() agrega uno o más elementos al inicio del array y devuelve el total");
+
+        var numeros2 = [3, 4, 5, 6];
+
+        console.log(numeros2.unshift(0,1,2));
+        console.log(numeros2);
+		
+		console.log("sort() ordena los elementos de un arreglo localmente y devuelve el arreglo ordenado");
+
+		var numerosEnteros = [9, 2, 8, 3, 4, 7, 10, 5, 6, 1];
+
+		console.log(numerosEnteros);
+		console.log("----ordenado----");
+        console.log(numerosEnteros.sort());
+
+        var palabras = ["Jesus", "Lupita", "Freddy", "Vianney", "Luis", "Angel"];
+
+		console.log(palabras);
+		console.log("----ordenado----");
+        console.log(palabras.sort());
+
+        console.log("splice() cambia el contenido de un array eliminando elementos existentes y/o agregando nuevos elementos, el primer parametro es la posición y el segundo es los elementos que vas a eliminar, y si agregas un tercer parametro es los elementos por los cuales vas a reemplzar los que eliminaste");
+
+        var palabras2 = ["Jesus", "Lupita", "Freddy", "Vianney", "Luis", "Angel"];
+
+        console.log(palabras2.splice(0, 2));
+
+        console.log("--------");
+
+        console.log(palabras2);
+
+        console.log("----agregar sin eliminar----");
+        console.log(palabras2.splice(0, 0, "Judith", "Aliz"));
+        
+        console.log("--------");
+
+        console.log(palabras2);
+
+        console.log("----agregar al final sin eliminar----");
+        console.log(palabras2.splice(-1, 0, "Carlos", "Mía"));
+        
+        console.log("--------");
+
+        console.log(palabras2);
+
+        console.log("----ACCESORES----");
+        console.log("join() une todos los elementos de una matriz (u objeto similar) en una cadena y la devuelve.");
+
+        var arrayNombres = ["Jesus", "Lupita", "Freddy", "Vianney", "Luis", "Angel"];
+
+        var arrayNombresTexto = arrayNombres.join();
+        console.log("----lo devuelve en una cadena de texto----");
+        console.log(arrayNombresTexto);
+
+        console.log("----podemos utilizar el searador que queramos----");
+        var arrayNombresTexto2 = arrayNombres.join(" - ");
+        console.log("----con guión----");
+        console.log(arrayNombresTexto2);
+        var arrayNombresTexto3 = arrayNombres.join(", ");
+        console.log("----con coma y espacio----");
+        console.log(arrayNombresTexto3);
+ 
+        console.log("slice() devuelve una parte del array dentro de un nuevo array empezando por inicio hasta fin (fin no incluido)");
+
+        console.log("----le decimos que nos devulva del elemento 0 al 2----");
+        var arrayNombresSlice = arrayNombres.slice(0,2);
+        console.log(arrayNombresSlice);
+
+        console.log("----todos menos el último----");
+        var arrayNombresSlice = arrayNombres.slice(0,-1);
+        console.log(arrayNombresSlice);
+
+        console.log("Metodos ya vistos en cadenas: toString(), indexOf(), lastIndexOf(), includes(), funcionan exactamente igual");
+
+
+        console.log("___De repetición___");
+
+        console.log("filter() - crea un nuevo array con todos los elementos que cumplan la condición.");
+
+        let arrayNuevo1 = [2,1,5,6,8,"Luis", "Diana", 99, "Jesús"];
+
+        arrayNuevo1.filter(valor => console.log(valor));
+
+        console.log("___otra forma___");
+
+        arrayNuevo1.filter(valor =>{
+            console.log(valor);
+        });
+
+        console.log("forEach() - ejecuta la función indicada una vez por cada elemento del array.");
+
+        arrayNuevo1.forEach(valor => console.log(valor));
+
+        console.log("___otra forma___");
+
+        arrayNuevo1.forEach(valor =>{
+            console.log(valor);
+        });
+
+        console.log("la diferencia de estos dos es que con filter() podemos poner condiciones, osea que es más completo que forEach().");
+
+        let arrayNuevo2 = ["Gaby", 8, "Vianney", "Ángel", "Luis", "Diana", 99, "Jesús", "Mani", 1];
+
+        console.log("por ejemplo devolver solo los elementos que tengas menos de 5 letras.");
+
+        let menosde5letras = arrayNuevo2.filter(valor => valor.length < 5);
+        console.log(menosde5letras);
+
+
+        console.log("console.table() sirve para mostrar los datos de un array en una tablita");
+
+        console.table(arrayNuevo2);
+
+
+
+
+	</script>
+	
+</body>
+</html>
